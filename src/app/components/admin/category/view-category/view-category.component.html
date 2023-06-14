@@ -1,0 +1,44 @@
+<mat-card class="mt-4">
+    <mat-list>
+        <mat-list-item *ngFor="let category of categoryData">
+
+            <div class="row">
+
+                <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-1">
+                        <mat-icon matListItemIcon class="text-dark">category</mat-icon>
+                    </div>
+
+                    <div class="col-md-10">
+                        <div matListItemTitle>{{category.title | uppercase}}</div>
+                        <div matListItemLine>{{category.description |uppercase}}</div>
+                    </div>
+                </div>
+
+                    
+                    
+                </div>
+
+
+                <div class="col-md-6 text-end">
+                    <button mat-raised-button class="mx-2" color="primary"[routerLink]="['/admin-dash/updatecategory/'+category.category_id]">Update Category</button>
+                    <button mat-raised-button class="mx-2" color="warn" (click)="deleteCategoryData(category.category_id)">Delete Category</button>
+                </div>
+
+                <mat-divider class="mt-2"></mat-divider>
+
+            </div>
+
+        </mat-list-item>
+    </mat-list>
+
+    <div class="container text-center">
+        <button mat-raised-button color="primary" class="mx-2 mt-4 mb-4" [routerLink]="'/admin-dash/addcategory'">Add
+            Category</button>
+    </div>
+
+
+</mat-card>
+
+

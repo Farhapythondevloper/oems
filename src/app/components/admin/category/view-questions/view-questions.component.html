@@ -1,0 +1,66 @@
+<h1 class="mt-4 text-center">Questions On {{ quizTitle | uppercase }}</h1>
+<mat-card
+  class="matcard mt-4"
+  *ngFor="let question of getAllQuestions; let i = index"
+>
+  <div class="container">
+    <p class="mt-5">
+      <b>{{ i + 1 }}</b
+      ><span>{{ question.content }}</span>
+    </p>
+    <div class="row">
+      <div class="col-md-6">
+        <p class="mt-2">
+          <b>A)</b><span>{{ question.option1 }}</span>
+        </p>
+      </div>
+
+      <div class="col-md-6">
+        <p class="mt-2">
+          <b>B)</b><span>{{ question.option2 }}</span>
+        </p>
+      </div>
+
+      <div class="col-md-6">
+        <p class="mt-2">
+          <b>C)</b><span>{{ question.option3 }}</span>
+        </p>
+      </div>
+
+      <div class="col-md-6">
+        <p class="mt-2">
+          <b>D)</b><span>{{ question.option4 }}</span>
+        </p>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+    <p class="mt-3">
+      <b>Correct Ans: </b><span>{{ question.answer }}</span>
+    </p>
+  </div>
+
+  <div class="container mt-4">
+    <button
+      class="btn btn-primary mb-4"
+      [routerLink]="[
+        'admin-dash/update-question/' +
+          question.questionId +
+          '/' +
+          question.quiz.title
+      ]"
+    >
+      Update
+    </button>
+    <button class="btn btn-danger mx-2 mb-4">Delete</button>
+  </div>
+</mat-card>
+
+<div class="container text-center mt-4">
+  <button
+    [routerLink]="['/admin-dash/add-question/' + quizid + '/' + quizTitle]"
+    class="btn btn-primary mx-2 mb-4"
+  >
+    Add New Questions
+  </button>
+</div>

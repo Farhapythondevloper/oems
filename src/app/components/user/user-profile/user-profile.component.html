@@ -1,0 +1,48 @@
+<mat-card class="mt-4">
+    <mat-card-content>
+        <div class="container text-center mt-2">
+            <img src="assets\images\avatar-icon-vector.jpg" alt="" class="mb-3">
+            <h1 class="mb-4">{{userData.firstname}} {{userData.lastname}}</h1>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th>User Name</th>
+                                <td>{{userData.username}}</td>
+                            </tr>
+
+                            <tr>
+                                <th>User Id</th>
+                                <td>{{userData.id}}</td>
+                            </tr>
+
+                            <tr>
+                                <th>User Roll</th>
+                                <td>{{userData.authorities[0].authority}}</td>
+                            </tr>
+
+                            <tr>
+                                <th>User Status</th>
+                                <td>{{userData.enabled}}</td>
+                            </tr>
+
+                            <tr>
+                                <th>User Contact</th>
+                                <td>{{userData.phone}}</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center">
+            <button mat-raised-button color="primary">Update</button>
+            <button mat-raised-button color="warn" class="mx-2">Share</button>
+        </div>
+    </mat-card-content>
+</mat-card>

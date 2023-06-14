@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+    <button routerLink="" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu_book</mat-icon>
+      </button>
+    <span routerLink="">Online Exam Management System</span>
+    <span class="example-spacer"></span>
+    <a *ngIf="!isLoggedIn" [routerLink]="'login'" class="nav-link" mat-button>
+        <!-- <mat-icon>login</mat-icon> -->
+        login </a>
+    
+    <a *ngIf="!isLoggedIn" [routerLink]="'signup'" mat-button class="mx-3 nav-link">
+        Signup</a>
+
+
+        <!--------------------------------------------------------- admin dashboard navbar ------------------------------------------------------>
+
+
+        <a *ngIf="isLoggedIn && user"  class="nav-link" mat-button>
+            <!-- <mat-icon>login</mat-icon> -->
+            {{user.username}} </a>
+        
+        <a *ngIf="isLoggedIn" mat-button class="mx-3 nav-link" (click)="logout()">
+            Signout</a>
+</mat-toolbar>

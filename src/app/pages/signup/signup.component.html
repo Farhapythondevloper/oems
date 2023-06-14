@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 mt-5">
+            <mat-card>
+                <div class="row justify-content-center">
+                    <img src="https://www.careerinfotech.in/home" alt="">
+                </div>
+                  
+                <div class="heading"><h1 class="text-center mt-2">SignUp Form</h1>
+                 <mat-divider></mat-divider>
+                </div>
+                
+                <form class="row" [formGroup]="signUpData" (ngSubmit)="sendSignUpData()" >
+                    <mat-form-field class=" col-6 mb-2 mt-2" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input type="text" matInput name="username" formControlName="username" class="text">
+                    </mat-form-field>
+
+                    <mat-form-field class=" col-6 mt-2" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput name="password" formControlName="password" class="password">
+                    </mat-form-field>
+
+                    <mat-form-field class=" col-6 mt-2" appearance="outline">
+                        <mat-label>FirstName</mat-label>
+                        <input type="text" matInput name="firstname" formControlName="firstname" class="text">
+                    </mat-form-field>
+
+                    <mat-form-field class=" col-6 mt-2" appearance="outline">
+                        <mat-label>LastName</mat-label>
+                        <input type="text" matInput name="lastname" formControlName="lastname" class="text">
+                    </mat-form-field>
+
+                    <mat-form-field class=" col-6 mt-2" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput name="email" formControlName="email" class="text">
+                    </mat-form-field>
+
+                    <mat-form-field class=" col-6 mt-2" appearance="outline">
+                        <mat-label>Phone No</mat-label>
+                        <input type="text" matInput name="phone" formControlName="phone" class="phone">
+                    </mat-form-field>
+
+                    <mat-card-content align="center" class="mt-3">
+                        <button type="submit" mat-raised-button color="primary" class="mx-2">SignUp</button>
+                        <button type="reset" mat-raised-button color="primary">reset</button>
+                    </mat-card-content>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</div>

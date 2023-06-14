@@ -1,0 +1,51 @@
+<mat-card class="mt-4">
+    <h1 class="text-center mt-3">Update Question</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <form class="row mt-3" [formGroup]="updateQuestionForm" (submit)="updateQuestionData()">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Enter Question here</mat-label>
+                        <input type="text"  name="description" id="" matInput placeholder="Enter Question here"> 
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="fill" class="col-md-6">
+                        <mat-label>Option A:</mat-label>
+                        <input type="text"   id="" matInput placeholder="Option A"> 
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="fill" class="col-md-6">
+                        <mat-label>Option B:</mat-label>
+                        <input type="text"   id="" matInput placeholder="Option B"> 
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="fill" class="col-md-6">
+                        <mat-label>Option C:</mat-label>
+                        <input type="text"   id="" matInput placeholder="Option C"> 
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="fill" class="col-md-6">
+                        <mat-label>Option D:</mat-label>
+                        <input type="text"   id="" matInput placeholder="Option D"> 
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter Your Option</mat-label>
+                        <mat-select>
+                            <mat-option>Option A</mat-option>
+                            <mat-option>Option B</mat-option>
+                            <mat-option>Option C</mat-option>
+                            <mat-option>Option D</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+    
+                    <div class="container text-center mt-4 mb-5">
+                        <button class="btn btn-primary">Add Question</button>
+                    </div>
+    
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    </mat-card>
