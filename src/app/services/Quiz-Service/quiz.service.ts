@@ -36,7 +36,7 @@ export class QuizService {
   }
 
   public getActiveQuizByCategoryId(category_id:any){
-    return this.http.get(`${baseUrl}quiz/category/active` + category_id)
+    return this.http.get(`${baseUrl}quiz/category/active/` + category_id)
 
   }
 }

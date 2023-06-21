@@ -10,9 +10,6 @@ import { QuestionService } from 'src/app/services/Question-service/question.serv
 })
 
 
-  
-
-
 export class AddQuestionComponent implements OnInit {
 
   addQuestionForm:FormGroup=new FormGroup({
@@ -29,12 +26,11 @@ export class AddQuestionComponent implements OnInit {
   quizTitle:any;
 
 constructor(private questionService:QuestionService, private activeRoute:ActivatedRoute, private router:Router){}
- 
- ngOnInit(): void {
+  ngOnInit(): void {
     this.activeRoute.params.subscribe(
       (res:any)=>{console.log(res);
-      this.quizId = res.id;
-      this.quizTitle = res.title;
+      this.quizId=res.id;
+      this.quizTitle=res.title;
       }
     );
   }
@@ -44,7 +40,7 @@ constructor(private questionService:QuestionService, private activeRoute:Activat
     "option2":this.addQuestionForm.value.option2,
     "option3":this.addQuestionForm.value.option3,
     "option4":this.addQuestionForm.value.option4,
-    "answer":this.addQuestionForm.value.answer,
+    "answer":this.addQuestionForm.value.answer
 
   }
   addQuestionData(){

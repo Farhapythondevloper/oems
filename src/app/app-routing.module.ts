@@ -22,6 +22,8 @@ import { UserWelcomPageComponent } from './components/user/user-welcom-page/user
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 import { UserGuard } from './services/User-Guard/user.guard';
 import { LoadquizesComponent } from './components/user/loadquizes/loadquizes.component';
+import { InstructionsComponent } from './components/user/instructions/instructions.component';
+import { SatrtExamComponent } from './components/user/satrt-exam/satrt-exam.component';
 
 const routes: Routes = [
   { path: '',component:HomeComponent},
@@ -49,9 +51,11 @@ canActivate:[UserGuard],
 children:[
   {path: '',component:UserWelcomPageComponent},
   {path: 'user-profile',component:UserProfileComponent},
-  {path: ':category_id', component:LoadquizesComponent}
+  {path: ':category_id', component:LoadquizesComponent},
+  {path: 'instructions/:quiz_id', component:InstructionsComponent}
 ]
-}
+},
+  {path:'startexam/:quiz_id', component: SatrtExamComponent}
 ];
 
 @NgModule({

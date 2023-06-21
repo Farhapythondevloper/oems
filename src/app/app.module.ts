@@ -40,7 +40,9 @@ import { UserWelcomPageComponent } from './components/user/user-welcom-page/user
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 import { AuthinterceptorInterceptor } from './services/interceptor/authinterceptor.interceptor';
 import { LoadquizesComponent } from './components/user/loadquizes/loadquizes.component';
-
+import { InstructionsComponent } from './components/user/instructions/instructions.component';
+import { SatrtExamComponent } from './components/user/satrt-exam/satrt-exam.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -73,6 +75,8 @@ import { LoadquizesComponent } from './components/user/loadquizes/loadquizes.com
     UserWelcomPageComponent,
     UserProfileComponent,
     LoadquizesComponent,
+    InstructionsComponent,
+    SatrtExamComponent,
   
    
     
@@ -91,6 +95,7 @@ import { LoadquizesComponent } from './components/user/loadquizes/loadquizes.com
     MatSelectModule,
     MatSlideToggleModule,
     HttpClientModule,
+    MatProgressSpinnerModule
 
 
   ],

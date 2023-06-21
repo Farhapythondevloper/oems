@@ -17,6 +17,8 @@ export class ViewQuestionsComponent implements OnInit {
   
   ngOnInit(): void {
 
+    // this.getAllQuestionData();
+
     this.activeRoute.params.subscribe(
       (res:any) => {console.log(res);
         this.quizid = res.id;
