@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/Category-service/category.service';
+import { LoginService } from 'src/app/services/loginservice/login.service';
 
 @Component({
   selector: 'app-userside',
@@ -9,7 +11,7 @@ import { CategoryService } from 'src/app/services/Category-service/category.serv
 export class UsersideComponent implements OnInit {
 
 
-  constructor(private categoryService:CategoryService){}
+  constructor(private categoryService:CategoryService, private loginService:LoginService, private router:Router){}
 
   allCategory:any;
 
@@ -22,4 +24,5 @@ export class UsersideComponent implements OnInit {
     )
     
   }
+  
 }

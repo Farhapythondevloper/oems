@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="!isSubmit">
     <div class="row">
         <div class="col-md-2">
         <mat-card class="mt-5">
@@ -17,34 +17,34 @@
 
         <div class="col-md-8">
             <div class="container">
-                <h1>HTML</h1>
+                <h1>{{questions[0].quiz.title}}</h1>
             </div>
 
-            <mat-card>
+            <mat-card *ngFor="let question of questions; let i=index" class="mt-2">
                 <mat-card-content>
-                    <h3> <b>what is html?</b></h3>
+                    <h3> Q.{{i+1}})<b> <span [(ngModel)]="question.content">{{question.content}}</span></b></h3>
                     <mat-divider></mat-divider>
                     <div class="row mt-2">
                         <div class="col-md-6">
-                            <input type="radio"> hypert text markup language
+                            <input type="radio" [name]="question.option1" [value]="question.option1" [(ngModel)]="question.givenAnswer"> {{question.option1}}
                         </div>
                         <div class="col-md-6">
-                            <input type="radio"> hypert text markup language
+                            <input type="radio" [name]="question.option2" [value]="question.option2" [(ngModel)]="question.givenAnswer"> {{question.option2}}
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col-md-6">
-                            <input type="radio"> hypert text markup language
+                            <input type="radio" [name]="question.option3" [value]="question.option3" [(ngModel)]="question.givenAnswer"> {{question.option3}}
                         </div>
                         <div class="col-md-6">
-                            <input type="radio"> hypert text markup language
+                            <input type="radio" [name]="question.option4" [value]="question.option4" [(ngModel)]="question.givenAnswer"> {{question.option4}}
                         </div>
                     </div>
                 </mat-card-content>
             </mat-card>
 
             <div class="container text-center mt-3">
-                <button class="btn btn-danger">End Exam</button>
+                <button class="btn btn-danger" (click)="submit()">End Exam</button>
             </div>
         </div>
 
@@ -56,9 +56,32 @@
                 </mat-card-header>
 
                 <mat-card-content>
-                    <h2>1:01</h2>
-                    <mat-spinner></mat-spinner>
+                    <h2>{{ getFormatedTime() }}</h2>
+                    <mat-spinner mode="determinate" [value]="(timer/(questions.length*0.30*100))*100"></mat-spinner>
                 </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5" *ngIf="isSubmit">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <mat-card>
+                <mat-card-title>
+                    <h1 class="text-center">Quiz Result</h1>
+                </mat-card-title>
+
+                <mat-card-content>
+                    <h3>Marks Got : {{marksGot}}</h3>
+                    <h3>Correct Answer : {{correctAnswers}}</h3>
+                    <h3>Attempted Questions : {{attempted}}</h3>
+                </mat-card-content>
+
+                <mat-card-actions>
+                    <button class="btn btn-primary mx-2" (click)="printResult()">Print</button>
+                    <button class="btn btn-primary" [routerLink]="['/user-dash/0']">Home</button>
+                </mat-card-actions>
             </mat-card>
         </div>
     </div>

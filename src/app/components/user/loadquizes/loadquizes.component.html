@@ -1,6 +1,6 @@
 <div class="container-fluid">
-    <div class="row mt-4" *ngIf="Quizes">
-        <div class="col-md-6" *ngFor="let quiz of Quizes">
+    <div class="row mt-4" *ngIf="quizes">
+        <div class="col-md-6" *ngFor="let quiz of quizes">
        
 
 <mat-card class="mt-4">
@@ -15,10 +15,10 @@
       
 
       <div class="container">
-        <button mat-stroked-button  class="mx- mt-3 mb-3" color="primary">View</button>
+        <button mat-stroked-button class="mx- mt-3 mb-3" color="primary">View</button>
         <button mat-stroked-button class="mx-1 mt-3 mb-3" color="primary" [routerLink]="['/user-dash/instructions/'+quiz.quiz_id]">Start</button>
         <button mat-stroked-button class="mx- mt-3 mb-3" color="primary">No.Of Questions:{{quiz.numberOfQuestions}}</button>
-        <button mat-stroked-button  class="mx-1 mt-3 mb-3" color="primary">No of Marks:{{quiz.maxMarks}}</button>
+        <button mat-stroked-button class="mx-1 mt-3 mb-3" color="primary">No of Marks:{{quiz.maxMarks}}</button>
        
       </div>
 
@@ -27,7 +27,7 @@
 
         </div>
 
-        <div class="col-md-12" *ngIf="Quizes.length == 0">
+        <div class="col-md-12" *ngIf="quizes.length == 0">
           <mat-card class="mt-4 text-center">
             <mat-card-content>
               <h1>Quiz is Not Available For This Category</h1>

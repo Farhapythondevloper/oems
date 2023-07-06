@@ -16,7 +16,7 @@ import { AddQuizesComponent } from './components/admin/category/add-quizes/add-q
 import { ViewQuestionsComponent } from './components/admin/category/view-questions/view-questions.component';
 import { AddQuestionComponent } from './components/admin/category/add-questions/add-questions.component';
 import { UpdateQuizComponent } from './components/admin/category/update-quiz/update-quiz.component';
-import { UpdateQuestionComponent } from './components/admin/category/update-question/update-question.component';
+
 import { AdminGuard } from './services/Admin-Guard/admin.guard';
 import { UserWelcomPageComponent } from './components/user/user-welcom-page/user-welcom-page.component';
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
@@ -24,6 +24,8 @@ import { UserGuard } from './services/User-Guard/user.guard';
 import { LoadquizesComponent } from './components/user/loadquizes/loadquizes.component';
 import { InstructionsComponent } from './components/user/instructions/instructions.component';
 import { SatrtExamComponent } from './components/user/satrt-exam/satrt-exam.component';
+import { UpdateQuestionComponent } from './components/admin/update-question/update-question.component';
+
 
 const routes: Routes = [
   { path: '',component:HomeComponent},
@@ -41,8 +43,9 @@ const routes: Routes = [
              {path:'add-quiz',component:AddQuizesComponent},
              {path: 'view-question/:id/:title',component:ViewQuestionsComponent},
              {path:'add-question/:id/:title',component:AddQuestionComponent},
+             {path:'update-question/:id/:title',component:UpdateQuestionComponent},
              {path:'update-quiz/:id',component: UpdateQuizComponent},
-             {path:'update-question/:id/:title',component: UpdateQuestionComponent}
+             
 ]
 },
   

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatToolbarModule } from '@angular/material/toolbar';
 import {MatIconModule } from '@angular/material/icon';
@@ -33,7 +34,7 @@ import { AddQuizesComponent } from './components/admin/category/add-quizes/add-q
 import { ViewQuestionsComponent } from './components/admin/category/view-questions/view-questions.component';
 import { AddQuestionComponent } from './components/admin/category/add-questions/add-questions.component';
 import { UpdateQuizComponent } from './components/admin/category/update-quiz/update-quiz.component';
-import { UpdateQuestionComponent } from './components/admin/category/update-question/update-question.component';
+
 import {  HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { UserDashboardComponent } from './components/user/user-dashboard/user-dashboard.component';
 import { UserWelcomPageComponent } from './components/user/user-welcom-page/user-welcom-page.component';
@@ -43,6 +44,9 @@ import { LoadquizesComponent } from './components/user/loadquizes/loadquizes.com
 import { InstructionsComponent } from './components/user/instructions/instructions.component';
 import { SatrtExamComponent } from './components/user/satrt-exam/satrt-exam.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { UpdateQuestionComponent } from './components/admin/update-question/update-question.component';
+
+
 
 
 
@@ -70,14 +74,16 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ViewQuestionsComponent,
     AddQuestionComponent,
     UpdateQuizComponent,
-    UpdateQuestionComponent,
+   
     UserDashboardComponent,
     UserWelcomPageComponent,
     UserProfileComponent,
     LoadquizesComponent,
     InstructionsComponent,
     SatrtExamComponent,
-  
+    UpdateQuestionComponent,
+    
+   
    
     
   ],
@@ -95,7 +101,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatSelectModule,
     MatSlideToggleModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    FormsModule,
 
 
   ],

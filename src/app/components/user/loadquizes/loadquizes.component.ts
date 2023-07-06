@@ -12,7 +12,7 @@ export class LoadquizesComponent implements OnInit {
   constructor(private quizService:QuizService, private activateRoute:ActivatedRoute){}
   
   categoryId:any;
-  Quizes:any;
+  quizes:any;
   
   ngOnInit(): void {
     this.activateRoute.params.subscribe(
@@ -22,7 +22,7 @@ export class LoadquizesComponent implements OnInit {
         if(this.categoryId == 0){
           this.quizService.getActiveQuiz().subscribe(
             (res:any) => {console.log(res);
-              this.Quizes = res;
+              this.quizes = res;
             }
           )
 
@@ -30,7 +30,7 @@ export class LoadquizesComponent implements OnInit {
         else{
           this.quizService.getActiveQuizByCategoryId(this.categoryId).subscribe(
             (res:any) => {console.log(res);
-              this.Quizes = res;
+              this.quizes = res;
             }
 
           )

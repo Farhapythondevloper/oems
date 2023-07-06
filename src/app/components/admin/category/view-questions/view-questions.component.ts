@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionService } from 'src/app/services/Question-service/question.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-view-questions',
@@ -9,15 +10,16 @@ import { QuestionService } from 'src/app/services/Question-service/question.serv
 })
 export class ViewQuestionsComponent implements OnInit {
 
-  quizid:any;
+  quizid :any;
   quizTitle:any;
   getAllQuestions:any;
+  
 
-  constructor(private quetionService:QuestionService, private activeRoute:ActivatedRoute,private router:Router ){}
+  constructor(private questionService:QuestionService, private activeRoute:ActivatedRoute,private router:Router ){}
   
   ngOnInit(): void {
 
-    // this.getAllQuestionData();
+   
 
     this.activeRoute.params.subscribe(
       (res:any) => {console.log(res);
@@ -25,17 +27,46 @@ export class ViewQuestionsComponent implements OnInit {
         this.quizTitle = res.title;
       }
     );
-
+    
+    this.getAllQuestionData();
 
     
   }
 
   getAllQuestionData(){
-    this.quetionService.getAllQuestionByQuizId(this.quizid).subscribe(
+    this.questionService.getAllQuestionByQuizId(this.quizid).subscribe(
       (res:any)=>{console.log(res);
         this.getAllQuestions = res;
       }
     )
+  }
+
+  deleteQuestionById(question_id:any){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        );
+        this.questionService.deleteQuestionById(question_id).subscribe(
+          (res:any)=>{console.log(res);
+          this.getAllQuestionData();
+          }
+        )
+      }
+    })
+
+   
+
   }
 
 }
