@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+// import { NgModule } from '@angular/core';
+// import { FormsModule } from '@angular/forms';
+// import { BrowserModule } from '@angular/platform-browser';
 import {MatToolbarModule } from '@angular/material/toolbar';
 import {MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
@@ -19,7 +19,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { ReactiveFormsModule } from '@angular/forms';
+// import { ReactiveFormsModule } from '@angular/forms';
 import { AdmindashboardComponent } from './components/admin/admindashboard/admindashboard.component';
 import { AdminsideComponent } from './components/admin/adminside/adminside.component';
 import { UserdashboardComponent } from './components/user/userdashboard/userdashboard.component';
@@ -45,6 +45,9 @@ import { InstructionsComponent } from './components/user/instructions/instructio
 import { SatrtExamComponent } from './components/user/satrt-exam/satrt-exam.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { UpdateQuestionComponent } from './components/admin/update-question/update-question.component';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -90,7 +93,7 @@ import { UpdateQuestionComponent } from './components/admin/update-question/upda
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    BrowserModule,
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
